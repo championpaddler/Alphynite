@@ -1,0 +1,342 @@
+<div id="top">
+    <div id="hide" style="display:block;background-color: white;  " class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <a href="#"> Call:+91-8447033951</a>
+                <a style="float :right;cursor:pointer" (click)="post=true;hidehome();   "> <u><strong style="color:  blueviolet;">Post Your Requirement</strong></u></a>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-briefcase"></i>&nbsp;Alphynite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <form class="form-inline my-2 my-lg-0" style="width: 100%">
+            <div class="container">
+                <div class="row">
+<div class="col-lg-6 col-md-4 col-sm-3 col-6">
+        <input id="input" (click)="form=true" (keyup)="keyup($event)" [(ngModel)]="input" name="input" style="width:100%;;margin-top:1%"
+        class=" form-control " type="search" placeholder="Search">
+</div>
+<div class="col-lg-2 col-md-2 col-sm-2 col-3">
+        <button class=" btn btn-outline-primary  " type="submit" style="width:100%;margin-top:1%">
+                <i class="fas fa-search"></i>
+            </button>
+           
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 " >
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+
+<div  *ngIf="userlogin;then log else logup"></div>
+<ng-template #logup>
+        <li>
+                <a class="nav-link " href="#">
+                    <button (click)="post=true ;hidehome();"  class=" btn btn-outline-primary  " type="submit" style="margin-top:1%">
+                        Sell on Alphynite</button>
+                </a>
+
+            </li>
+            <li>
+                <a class="nav-link " >
+                    <select class="nav-link" value="City" style="zoom:0.5">
+                        <option value="Select">Select City</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Gurgaon">Gurgaon</option>
+                        <option value="Ghazibad">Ghazibad</option>
+                        <option value="Noida">Noida</option>
+                       
+                    </select>
+                </a>
+
+
+            </li>
+</ng-template>
+<ng-template #log>
+        <li>
+                <a class="nav-link " href="#">
+                    <button   class=" btn btn-outline-primary"  style="margin-top:1%">
+                       DashBoard</button>
+                </a>
+
+            </li>
+</ng-template>
+
+                  
+
+
+                </ul>
+
+            </div>  
+</div>
+                    
+                   
+               
+                   
+                </div> 
+
+
+
+
+            </div>
+
+        </form>
+
+
+
+        
+    </nav>
+</div>
+<div id="results" *ngIf="form" style="width:80%">
+    <div class="container-fluid">
+
+
+        <div class="row">
+            <div id="res" style=" height:50px;" class="col-lg-4 col-sm-8 col-xs-8" *ngFor="let j of search">
+                <i class="fas fa-vials"> </i>
+                <span>{{j}}</span>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<!--Mobile OTP Intake-->
+
+<form *ngIf="mobile" id="mobile">
+    <div class="container-fluid" style="width:70%;height:100%;margin-top:10%;margin-left:15%">
+        <div class="row" style="background-color:white;">
+        <div><i class="fas fa-times fa-2x" (click)="mobile=false"></i>
+        </div>
+        <div  style="text-align:center;" class="col-lg-12">
+            <img  src="https://cdn2.iconfinder.com/data/icons/luchesa-part-3/128/SMS-512.png" style="width:200px;height:200px;">
+        </div>
+        <div  class="col-lg-12">
+                <h4 style="text-align:center">Verify your mobile number</h4>
+   
+        </div>
+    
+
+
+      
+
+<div class="col-lg-12">
+
+
+     
+            <div class="container-fluid" >
+                <div class="row" style="text-align: center">
+                        <input id="otp1"  [(ngModel)]="otpvalue" name="otpvalue" placeholder="Enter OTP" type="text" minlength="4" maxlength="4"    class="form-control" style=" margin: auto;width:40%;padding: 10px;text-align: center  ; " autofocus   >
+                    
+                </div>
+
+       </div>
+       <div  style="text-align: center;color:red" *ngIf="errorotp" class="container-fluid" >
+             Wrong OTP . !!! Retry of Resend New OTP.
+       </div>
+               
+        </div>
+
+        
+        <div class="center" style="text-align:center">
+                <button class="btn btn-outline-primary"(click)="verifyotp(otpvalue)" >Submit</button>
+
+
+        </div>
+
+
+
+
+       
+
+        </div>
+
+    </div>
+
+</form>
+
+
+
+
+
+
+
+<form *ngIf="post" id="post">
+    <div class="container" style="background-color:white;height:fit-content;border-radius: 25px">
+        <div class="row" style="margin-top:5px">
+            <div class="container">
+                <div (click)="post=false;unhidehome()" style="float:right">
+                    <i class="fas fa-times fa-3x"></i>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3" id="leftform" style="height:auto;border-radius:25px;background-color: gold">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h5 style="text-align: center"> How It Works??</h5>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-sm-4  col-xs-12"> Post Your Requirement
+                                                <div>
+                                                    <i class="fas fa-clipboard"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-sm-4  col-xs-12"> Receive A Call
+                                                <div>
+                                                    <i class="fas fa-phone"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-sm-4  col-xs-12">Settle your Deal
+                                                <div>
+                                                    <i class="fas fa-handshake"></i>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <button (click)="signup=true;login=false;loginForm.reset();loginsubmitted=false;" class="btn btn-outline-primary "  style="width:50%">Signup</button>
+                                
+
+                                <button (click)="login=true;signup=false;registerForm.reset();signupsubmitted=false;" class="btn btn-outline-primary " style="width:50%">Login</button>
+
+                            </div>
+                            <div class="row">
+
+                                <div class="col-lg-12" *ngIf="signup">
+                                    <div class="container">
+                                        <div class="row" style="margin:auto">
+                                            <div class="col-md-6 offset-md-3">
+                                                <h4 style="text-align: center">Signup</h4>
+                                                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+                                                    <div class="form-group">
+                                                        <label>Name</label>
+                                                        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': signupsubmitted && s.firstName.errors }"
+                                                        />
+                                                        <div *ngIf=" signupsubmitted&& s.firstName.errors" class="invalid-feedback">
+                                                            <div *ngIf="s.firstName.errors.required">First Name is required</div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Phone</label>
+                                                        <input type="text" formControlName="Phone" class="form-control" [ngClass]="{ 'is-invalid':  signupsubmitted && s.Phone.errors }"
+                                                        />
+                                                        <div *ngIf=" signupsubmitted&& s.Phone.errors" class="invalid-feedback">
+                                                            <div *ngIf="s.Phone.errors.required">Phone is required</div>
+                                                            <div *ngIf="s.Phone.errors.minlength">Minimum 10 digits is required</div>
+                                                            <div *ngIf="s.Phone.errors.maxlength">Maximum 10 digits is required</div>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Password</label>
+                                                        <input type="password" formControlName="Password" class="form-control" [ngClass]="{ 'is-invalid':  signupsubmitted && s.Password.errors }"
+                                                        />
+                                                        <div *ngIf="signupsubmitted && s.Password.errors" class="invalid-feedback">
+                                                            <div *ngIf="s.Password.errors.required">Password is required</div>
+                                                            <div *ngIf="s.Password.errors.minlength">Minimum 6 digits are required</div>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>City</label>
+                                                        <input type="text" id="autocomplete" formControlName="City" class="form-control" [ngClass]="{ 'is-invalid': signupsubmitted && s.City.errors }">
+
+                                                       
+
+                                                    </div>
+
+
+
+                                                    <div class="form-group">
+                                                        <button [disabled]="loading" class="btn btn-primary" >Signup</button>
+                                                    </div>
+                              
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12" *ngIf="login">
+                                    <div class="container">
+                                        <div class="row" style="margin:auto">
+                                            <div class="col-md-6 offset-md-3">
+                                                <h4 style="text-align: center">Login</h4>
+                                                <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+                                                    <div class="form-group">
+                                                        <label>Phone</label>
+                                                        <input type="number" formControlName="Phone" class="form-control" [ngClass]="{ 'is-invalid': loginsubmitted && l.Phone.errors }"
+                                                        />
+                                                        <div *ngIf="loginsubmitted && l.Phone.errors" class="invalid-feedback">
+                                                            <div *ngIf="l.Phone.errors.required">Phone is required</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Password</label>
+                                                        <input type="password" formControlName="Password" class="form-control" [ngClass]="{ 'is-invalid': loginsubmitted && l.Password.errors }"
+                                                        />
+                                                        <div *ngIf="loginsubmitted && l.Password.errors" class="invalid-feedback">
+                                                            <div *ngIf="l.Password.errors.required">Password is required</div>
+                                                            <div *ngIf="l.Password.errors.minlength">Minimum 6 digits is required</div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button class="btn btn-primary">Login</button>
+                                                    </div>
+                                                    
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
