@@ -25,7 +25,7 @@ Mongo
 
 Badgeyay's frontend and backend can be deployed easily and a detailed installation instruction of frontend and backend have been provided below.
 
-## Badgeyay Frontend
+## Alphynite Frontend
 
 ```sh
 cd frontend
@@ -35,7 +35,7 @@ ng serve
 
 
 
-## Badgeyay Backend
+## Alphynite Backend
 
 ```sh
 cd backend
