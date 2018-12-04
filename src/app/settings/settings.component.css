@@ -1,0 +1,36 @@
+
+#dashsidebar> div>div:hover{
+    cursor: pointer;
+   
+  background-color: #42566e
+}
+#dashsidebar >div>div{
+    cursor: pointer;
+    height: 50px;
+    size: 2em;
+}
+
+#titlecard
+{    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+width: 100%;
+}
+#dashsidebar
+{
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-right: 0.5%;
+    height:100%;
+position:fixed;
+width:15%;    
+    background-color: #232f3e;
+}
+
+.card:hover
+{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+@media screen and (max-width:1000px) {
+    #dashsidebar { display: none; }   /* hide it elsewhere */
+   
+  }

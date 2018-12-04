@@ -1,0 +1,149 @@
+<div style="margin-top:120px">
+
+<div class="container-fluid">
+    <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-1"  >
+                    <div class="container-fluid" id="dashsidebar" style="color:white"  >
+
+                            <div class="row" >
+                            
+                            
+                             
+                               <div class="col-12"
+                                  (click)="leads=true"  routerLink="/dash">
+                                  <i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
+                            
+                               </div>
+                               <div class="col-12"
+                               (click)="leads=true">
+                            
+                               <i class="fas fa-envelope"></i>   Messages
+                            </div>
+                              
+                              <div  style="word-wrap:break-word" class="col-12" (click)="require=true"><span><i class="fas fa-tasks"></i>Leads
+                              </span>
+                                </div>
+                            
+                                <div class="col-12"
+                                (click)="leads=true" routerLink="/companyp">
+                             
+                                
+                                <i class="fas fa-users" ></i>Company Profile
+                              </div>
+                                <div class="col-12"
+                                (click)="leads=true">
+                             
+                                
+                                <i class="fas fa-cogs"></i>  Settings
+                             </div>
+                            
+                              </div>
+                              
+                            
+                            </div>
+                    
+                      </div>
+    
+                      <div class="col-lg-10">
+                            <div class="container">
+                                <div class="row" style="margin:auto">
+                                    <div class="col-md-6 offset-md-3">
+                                        <h4 style="text-align: center">Add Product</h4>
+                                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    
+                                            <div class="form-group">
+                                                <label>Name</label>
+                                                <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': signupsubmitted && s.firstName.errors }"
+                                                />
+                                                <div *ngIf=" signupsubmitted&& s.firstName.errors" class="invalid-feedback">
+                                                    <div *ngIf="s.firstName.errors.required">First Name is required</div>
+                                                </div>
+                    
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Rate</label>
+                                                <input type="text" formControlName="Rate" class="form-control" [ngClass]="{ 'is-invalid':  signupsubmitted && s.Rate.errors }"
+                                                />
+                                                <div *ngIf=" signupsubmitted&& s.Rate.errors" class="invalid-feedback">
+                                                    <div *ngIf="s.Rate.errors.required">Rate is required</div>
+                                                    
+                    
+                                                </div>
+                    
+                                            </div>
+                                           
+                                            <div class="form-group">
+                                                <label>Category</label>
+                                   <select    formControlName="Category" class="form-control" [ngClass]="{ 'is-invalid':  signupsubmitted && s.Category.errors }"    >
+                                   <option value="volvo">Volvo</option>
+                                   <option value="saab">Saab</option>
+                                   <option value="mercedes">Mercedes</option>
+                                   <option value="audi">Audi</option></select>           
+                                                
+                                                <div *ngIf=" signupsubmitted&& s.Category.errors" class="invalid-feedback">
+                                                    <div *ngIf="s.Category.errors.required">Rate is required</div>
+                                                    
+                    
+                                                </div>
+                    
+                                            </div>
+                    
+                                         
+                                            <div class="form-group">
+                                                <label>Upload Image(Minimum 1 Image is required)</label><br>
+                                               <input type="file" id="image1" data-max-size="2048"  (change)="preview($event,image1)" name="photo" accept="image/*" ng2FileSelect [uploader]="uploader" placeholder="Required Minimum One image" formControlName="Image" class="form-control" [ngClass]="{ 'is-invalid': signupsubmitted && s.Image.errors } "/><br>
+                                               
+                                                <div *ngIf="signupsubmitted&& s.Image.errors" class="invalid-feedback">
+                                                    <div *ngIf="s.Image.errors.required">City Name is required</div>
+                                                </div>
+                    
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Upload 2 Image(Optional)</label><br>
+                                               <input type="file" id="image2" (change)="preview2($event,image2)" name="photo" accept="image/*" ng2FileSelect [uploader]="uploader" placeholder="Required Minimum One image" formControlName="Image" class="form-control" [ngClass]="{ 'is-invalid': signupsubmitted && s.Image.errors } "/><br>
+                                               
+                                                
+                    
+                                            </div>
+                                            <div>
+                                                <img id="image1pre" src="" style="display: none" style="height:100px;width:100px;" />
+                                                &nbsp;
+                                                <img id="image2pre" src=""  style="height:100px;width:100px;" />
+                    
+                                            </div>&nbsp;
+                    
+                    
+                    
+                    
+                    
+                    
+                                            <div class="form-group">
+                                                <button  
+                                                [disabled]="!uploader.getNotUploadedItems().length" class="btn btn-primary" >Signup</button>
+                                            </div>
+                      
+                                        </form>
+                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
