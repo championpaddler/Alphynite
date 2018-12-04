@@ -18,14 +18,7 @@ app.use(function (req, res, next) {
 	next();
 });
  
-// app.use(function(req, res, next) {
-// 	res.setHeader("Access-Control-Allow-Origin", "*");
-	
-// 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
-// 	res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers")
-	
-// 	next();
-// 	});
+
 
 
 ;
@@ -101,10 +94,10 @@ console.log();
  console.log(req.body[0]['OTP'])
 
  var Message="Hi ! You OTP is "+req.body[0]['OTP'];
-// msg91.send(mobileNo, Message, function(err, response){
-//     console.log(err);
-//     console.log(response);
-// });
+msg91.send(mobileNo, Message, function(err, response){
+    console.log(err);
+    console.log(response);
+});
 console.log(req.connection.remoteAddress);
 
 	res.send(["Done"]);
@@ -142,5 +135,6 @@ app.post("/api/signup/",function(req,res){
     app.get('/*',function(req,res){
       res.sendFile(path.join(__dirname+'/dist/frontend/index.html'))
     })
-var port = 3000||process.env.PORT
+var port = process.env.PORT||3000;
+
 app.listen(port,console.log('Your server available at http://localhost:3000'));
