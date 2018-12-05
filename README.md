@@ -28,7 +28,7 @@ Badgeyay's frontend and backend can be deployed easily and a detailed installati
 ## Alphynite Frontend
 
 ```sh
-cd frontend
+
 npm install
 ng serve
 ```
@@ -38,7 +38,7 @@ ng serve
 ## Alphynite Backend
 
 ```sh
-cd backend
+
 npm install
 nodemon index.js
 ```
