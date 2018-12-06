@@ -1,12 +1,7 @@
 var express = require('express');
-var bcrypt= require('bcrypt');
-var path = require('path');
-
-var msg91 = require("msg91")("197611ACBvIjqJZM5a7ed724","AAYYUU", "4" );
-
 var app = express();
-var multer = require('multer');
 var bodyParser = require('body-parser');
+var path = require('path');
 
 
 //middlewares
@@ -35,7 +30,7 @@ app.use(function (req, res, next) {
 });
  
 
-//usign the routes
+//using the routes
 var api_routes = require('./routes/api.routes.js');
 app.use('/api',api_routes);
 
