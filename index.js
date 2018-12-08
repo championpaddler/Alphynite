@@ -43,13 +43,13 @@ limits:{
 app.use('/uploads/', express.static(path.join(__dirname, '/public/uploads')));
 app.use(express.static(__dirname + '/dist/frontend/'));
  
-// app.use(function (req, res, next) {
-//   res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:4200');
-//   res.setHeader('Access-Control-Allow-Methods', 'POST');
-//   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-//   res.setHeader('Access-Control-Allow-Credentials', true);
-//   next();
-// });
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:4200');
+  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
  
 
 //using the routes
